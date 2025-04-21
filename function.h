@@ -17,38 +17,59 @@ pinMode(led4, OUTPUT);
 pinMode(led5, OUTPUT);
 pinMode(led6, OUTPUT);
 
+bool isAnswering;
+
 void func1() {
-  digitalWrite(led1, HIGH);
-  ringSound("answer");
+  if(!isAnswering) {
+    isAnswering = true;
+    digitalWrite(led1, HIGH);
+    ringSound("answer");
+  }
 }
 
 void func2() {
-  digitalWrite(led2, HIGH);
-  ringSound("answer");
+  if(!isAnswering) {
+    isAnswering = true;
+    digitalWrite(led2, HIGH);
+    ringSound("answer");
+  }
 }
 
 void func3() {
-  digitalWrite(led3, HIGH);
-  ringSound("answer");
+  if(!isAnswering) {
+    isAnswering = true;
+    digitalWrite(led3, HIGH);
+    ringSound("answer");
+  }
 }
 
 void func4() {
-  digitalWrite(led4, HIGH);
-  ringSound("answer");
+  if(!isAnswering) {
+    isAnswering = true;
+    digitalWrite(led4, HIGH);
+    ringSound("answer");
+  }
 }
 
 void func5() {
-  digitalWrite(led5, HIGH);
-  ringSound("answer");
+  if(!isAnswering) {
+    isAnswering = true;
+    digitalWrite(led5, HIGH);
+    ringSound("answer");
+  }
 }
 
 void func6() {
-  digitalWrite(led6, HIGH);
-  ringSound("answer");
+  if(!isAnswering) {
+    isAnswering = true;
+    digitalWrite(led6, HIGH);
+    ringSound("answer");
+  }
 }
 
 void correct() {
-  //ここで全てのランプを消す
+  isAnswering = true;
+
   digitalWrite(led1, LOW);
   digitalWrite(led2, LOW);
   digitalWrite(led3, LOW);
@@ -60,7 +81,8 @@ void correct() {
 }
 
 void incorrect() {
-  //ここで全てのランプを消す
+  isAnswering = true;
+
   digitalWrite(led1, LOW);
   digitalWrite(led2, LOW);
   digitalWrite(led3, LOW);
