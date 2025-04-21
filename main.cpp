@@ -1,16 +1,24 @@
-#include "Button.h"
-#include "NumberLed.h"
+#include "function.h"
 
-const int btn1 = ;
-const int btn2 = ;
-const int btn3 = ;
-const int btn4 = ;
-const int btn5 = ;
-const int btn6 = ;
+const char
+  btn1 = ,
+  btn2 = ,
+  btn3 = ,
+  btn4 = ,
+  btn5 = ,
+  btn6 = ,
+  btn = ,
+  btn = ;
 
 void setup() {
-  Button.begin(btn1, btn2, btn3, btn4, btn5, btn6);
-  NumLed.begin();
+  pinMode();//ボタンのやつだけコメントつけながらやっといて
+
+  //早押しボタンの割り込み処理の登録
+  attachInterrupt(btn1, func1, RISING);
+
+  //正解ボタン&不正解ボタンの割り込み処理の登録
+  attachInterrupt(btn, , RISING);
+  attachInterrupt(btn, , RISING);
 }
 
 void loop() {
