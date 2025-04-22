@@ -2,33 +2,33 @@
 
 //ピンの割り当て
 const char
-  btn1 = ,
-  btn2 = ,
-  btn3 = ,
-  btn4 = ,
-  btn5 = ,
-  btn6 = ,
+  BTN1 = ,
+  BTN2 = ,
+  BTN3 = ,
+  BTN4 = ,
+  BTN5 = ,
+  BTN6 = ,
   corrBtn = ,
   incorrBtn = ;
 
 void setup() {
   //ピンモードの設定
-  pinMode(btn1, INPUT);
-  pinMode(btn2, INPUT);
-  pinMode(btn3, INPUT);
-  pinMode(btn4, INPUT);
-  pinMode(btn5, INPUT);
-  pinMode(btn6, INPUT);
+  pinMode(BTN1, INPUT);
+  pinMode(BTN2, INPUT);
+  pinMode(BTN3, INPUT);
+  pinMode(BTN4, INPUT);
+  pinMode(BTN5, INPUT);
+  pinMode(BTN6, INPUT);
   pinMode(corrBtn, INPUT);
   pinMode(incorrBtn, INPUT);
 
   //早押しボタンの割り込み処理の登録
-  attachInterrupt(btn1, func1, RISING);
-  attachInterrupt(btn2, func2, RISING);
-  attachInterrupt(btn3, func3, RISING);
-  attachInterrupt(btn4, func4, RISING);
-  attachInterrupt(btn5, func5, RISING);
-  attachInterrupt(btn6, func6, RISING);
+  attachInterrupt(BTN1, func1, RISING);
+  attachInterrupt(BTN2, func2, RISING);
+  attachInterrupt(BTN3, func3, RISING);
+  attachInterrupt(BTN4, func4, RISING);
+  attachInterrupt(BTN5, func5, RISING);
+  attachInterrupt(BTN6, func6, RISING);
 
   //正解ボタン&不正解ボタンの割り込み処理の登録
   attachInterrupt(corrBtn, correct, RISING);
