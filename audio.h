@@ -1,18 +1,20 @@
-const unsigned int Hz = ;
-const unsigned float __TIME = 1 / Hz * 1000000;//1秒 ÷ サンプル周波数 × 1秒のマイクロ秒換算
+const unsigned char BUZZER = ;
 
+const unsigned int SF = ;
+const unsigned float __SP = 1 / Hz * 1000000;//サンプリング周期 = 1秒 ÷ サンプル周波数 × 1秒のマイクロ秒換算
 
-const byte* ANSWER_SOUND = {}
+const byte* ANSWER_SOUND PROGMEM = {}
 
-const byte* CORRECT_SOUND = {}
+const byte* CORRECT_SOUND PROGMEM = {}
 
-const byte* INCORRECT_SOUND = {}
+const byte* INCORRECT_SOUND PROGMEM = {}
 
 void __play(byte* data) {
   for(unsigned int i, size = sizeof(*data); i < size; i++) {
-    (*data[i]);//この行に配列の音を鳴らすコードを書いて
-    delayMicroseconds(__TIME);
+    analogWrite(BUZZER, *data[i]);//この行に配列の音を鳴らすコードを書いて
+    delayMicroseconds(__SP);
   }
+  analogWrite(BUZZER, 0);
 }
 
 void ringSound(char type) {
