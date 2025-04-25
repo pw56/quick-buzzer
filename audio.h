@@ -1,11 +1,32 @@
+const unsigned char BUZZER = ;
+
+const unsigned int SF = ;
+const unsigned float __SP = 1 / Hz * 1000000;//サンプリング周期 = 1秒 ÷ サンプル周波数 × 1秒のマイクロ秒換算
+
+const byte* ANSWER_SOUND PROGMEM = {}
+
+const byte* CORRECT_SOUND PROGMEM = {}
+
+const byte* INCORRECT_SOUND PROGMEM = {}
+
 void __play(byte* data) {
-  for(unsigned int i; i < sizeof(*data); i++) {
-    tone();
+  for(unsigned int i, size = sizeof(*data); i < size; i++) {
+    analogWrite(BUZZER, *data[i]);//この行に配列の音を鳴らすコードを書いて
+    delayMicroseconds(__SP);
   }
+  analogWrite(BUZZER, 0);
 }
 
 void ringSound(char type) {
-  if(type == "") {
-    __play();
+  if(type == "answer") {
+    __play(ANSWER_SOUND);
+  }
+
+  if(type == "correct") {
+    __play(CORRECT_SOUND);
+  }
+
+  if(type == "incorrect") {
+    __play(INCORRECT_SOUND);
   }
 }
