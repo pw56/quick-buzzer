@@ -1,6 +1,6 @@
 const unsigned char BUZZER = ;
 
-const unsigned int SF = ;
+const unsigned int SF = ;//サンプリング周波数
 const unsigned float __SP = 1 / Hz * 1000000;//サンプリング周期 = 1秒 ÷ サンプル周波数 × 1秒のマイクロ秒換算
 
 const byte* ANSWER_SOUND PROGMEM = {}
