@@ -1,0 +1,1 @@
+const byte* CORRECT_SOUND PROGMEM = {}

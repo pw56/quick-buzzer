@@ -1,13 +1,11 @@
+#include "answer_sound.h"
+#include "correct_sound.h"
+#include "incorrect_sound.h"
+
 extern const unsigned char BUZZER;
 
 const unsigned int SF = ;//サンプリング周波数
 const unsigned float __SP = 1 / SF * 1000000;//サンプリング周期 = 1秒 ÷ サンプル周波数 × 1秒のマイクロ秒換算
-
-const byte* ANSWER_SOUND PROGMEM = {}
-
-const byte* CORRECT_SOUND PROGMEM = {}
-
-const byte* INCORRECT_SOUND PROGMEM = {}
 
 void __play(byte* data) {
   for(unsigned int i, size = sizeof(*data); i < size; i++) {
