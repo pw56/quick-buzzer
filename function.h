@@ -1,72 +1,76 @@
 #include "audio.h"
 
 //ピンの割り当て
-const char
-  led1 = ,
-  led2 = ,
-  led3 = ,
-  led4 = ,
-  led5 = ,
-  led6 = ;
+extern const char
+  LED1,
+  LED2,
+  LED3,
+  LED4,
+  LED5,
+  LED6;
 
-//ピンモードの設定
-pinMode(led1, OUTPUT);
-pinMode(led2, OUTPUT);
-pinMode(led3, OUTPUT);
-pinMode(led4, OUTPUT);
-pinMode(led5, OUTPUT);
-pinMode(led6, OUTPUT);
+bool isAnswering = false;
 
 void func1() {
-  digitalWrite(led1, HIGH);
+  isAnswering = true;
+  digitalWrite(LED1, HIGH);
   ringSound("answer");
 }
 
 void func2() {
-  digitalWrite(led2, HIGH);
+  isAnswering = true;
+  digitalWrite(LED2, HIGH);
   ringSound("answer");
 }
 
 void func3() {
-  digitalWrite(led3, HIGH);
+  isAnswering = true;
+  digitalWrite(LED3, HIGH);
   ringSound("answer");
 }
 
 void func4() {
-  digitalWrite(led4, HIGH);
+  isAnswering = true;
+  digitalWrite(LED4, HIGH);
   ringSound("answer");
 }
 
 void func5() {
-  digitalWrite(led5, HIGH);
+  isAnswering = true;
+  digitalWrite(LED5, HIGH);
   ringSound("answer");
 }
 
 void func6() {
-  digitalWrite(led6, HIGH);
+  isAnswering = true;
+  digitalWrite(LED6, HIGH);
   ringSound("answer");
 }
 
 void correct() {
+  isAnswering = false;
+
   //ここで全てのランプを消す
-  digitalWrite(led1, LOW);
-  digitalWrite(led2, LOW);
-  digitalWrite(led3, LOW);
-  digitalWrite(led4, LOW);
-  digitalWrite(led5, LOW);
-  digitalWrite(led6, LOW);
+  digitalWrite(LED1, LOW);
+  digitalWrite(LED2, LOW);
+  digitalWrite(LED3, LOW);
+  digitalWrite(LED4, LOW);
+  digitalWrite(LED5, LOW);
+  digitalWrite(LED6, LOW);
 
   ringSound("correct");
 }
 
 void incorrect() {
+  isAnswering = false;
+
   //ここで全てのランプを消す
-  digitalWrite(led1, LOW);
-  digitalWrite(led2, LOW);
-  digitalWrite(led3, LOW);
-  digitalWrite(led4, LOW);
-  digitalWrite(led5, LOW);
-  digitalWrite(led6, LOW);
+  digitalWrite(LED1, LOW);
+  digitalWrite(LED2, LOW);
+  digitalWrite(LED3, LOW);
+  digitalWrite(LED4, LOW);
+  digitalWrite(LED5, LOW);
+  digitalWrite(LED6, LOW);
 
   ringSound("incorrect");
 }

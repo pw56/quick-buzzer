@@ -2,39 +2,72 @@
 
 //ピンの割り当て
 const char
-  btn1 = ,
-  btn2 = ,
-  btn3 = ,
-  btn4 = ,
-  btn5 = ,
-  btn6 = ,
-  corrBtn = ,
-  incorrBtn = ;
+  BTN1 = ,
+  BTN2 = ,
+  BTN3 = ,
+  BTN4 = ,
+  BTN5 = ,
+  BTN6 = ,
+  CORR_BTN = ,
+  INCORR_BTN = ,
+  LED1 = ,
+  LED2 = ,
+  LED3 = ,
+  LED4 = ,
+  LED5 = ,
+  LED6 = ,
+  BUZZER = ;
+
+extern bool isAnswering;
 
 void setup() {
-  //ピンモードの設定
-  pinMode(btn1, INPUT);
-  pinMode(btn2, INPUT);
-  pinMode(btn3, INPUT);
-  pinMode(btn4, INPUT);
-  pinMode(btn5, INPUT);
-  pinMode(btn6, INPUT);
-  pinMode(corrBtn, INPUT);
-  pinMode(incorrBtn, INPUT);
+  //早押しボタン
+  pinMode(BTN1, INPUT);
+  pinMode(BTN2, INPUT);
+  pinMode(BTN3, INPUT);
+  pinMode(BTN4, INPUT);
+  pinMode(BTN5, INPUT);
+  pinMode(BTN6, INPUT);
+  pinMode(CORR_BTN, INPUT);
+  pinMode(INCORR_BTN, INPUT);
 
-  //早押しボタンの割り込み処理の登録
-  attachInterrupt(btn1, func1, RISING);
-  attachInterrupt(btn2, func2, RISING);
-  attachInterrupt(btn3, func3, RISING);
-  attachInterrupt(btn4, func4, RISING);
-  attachInterrupt(btn5, func5, RISING);
-  attachInterrupt(btn6, func6, RISING);
+  //LED
+  pinMode(LED1, OUTPUT);
+  pinMode(LED2, OUTPUT);
+  pinMode(LED3, OUTPUT);
+  pinMode(LED4, OUTPUT);
+  pinMode(LED5, OUTPUT);
+  pinMode(LED6, OUTPUT);
 
-  //正解ボタン&不正解ボタンの割り込み処理の登録
-  attachInterrupt(corrBtn, correct, RISING);
-  attachInterrupt(incorrBtn, incorrect, RISING);
+  //ブザー
+  pinMode(BUZZER, OUTPUT);
 }
 
 void loop() {
-  ;
+  if(isAnswering == false) {
+    //早押しボタンのループ
+    if(digitalRead(BTN1) == HIGH)
+      func1();
+
+    if(digitalRead(BTN2) == HIGH)
+      func2();
+
+    if(digitalRead(BTN3) == HIGH)
+      func3();
+
+    if(digitalRead(BTN4) == HIGH)
+      func4();
+
+    if(digitalRead(BTN5) == HIGH)
+      func5();
+
+    if(digitalRead(BTN6) == HIGH)
+      func6();
+  } else {
+    if(digitalRead(CORR_BTN) == HIGH)
+      correct();
+
+    if(digitalRead(INCORR_BTN) == HIGH)
+      incorrect();
+  }
 }
