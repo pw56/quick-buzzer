@@ -1,12 +1,19 @@
 #ifndef AUDIO_PLAYER_H
 #define AUDIO_PLAYER_H
 
-// Audio player header file for quick buzzer system
+#include <avr/pgmspace.h>
+#include <stdint.h>
 
-// Function declarations
-void initAudioPlayer();
-void playPushedSound();
-void playCorrectSound();
-void playIncorrectSound();
+// WAV データは data/ 以下のヘッダで定義
+extern const uint8_t pushed_wav[];
+extern const uint8_t correct_wav[];
+extern const uint8_t incorrect_wav[];
 
-#endif // AUDIO_PLAYER_H
+class AudioPlayer {
+public:
+  // PWM 出力ピン (D9) を使って 8kHz で再生
+  void begin();
+  void play(const uint8_t *data, uint16_t length);
+};
+
+#endif
