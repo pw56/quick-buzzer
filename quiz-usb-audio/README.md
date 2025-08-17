@@ -1,7 +1,9 @@
-# Quick Buzzer System
+# quick-buzzer
 
 ## 概要
-Arduino Nano上で動作する早押し機システムです。
+このリポジトリはArduino Nano上で動作する早押し機を製作するのに作成・引用したソースコードとそれに必要なファイルです。
+このリポジトリのソースコードはMicrosoft Copilotによって作成されました。
+[こちら](https://copilot.microsoft.com/shares/pnHkYBDkBwXsRy7J9ifzT)がその会話です。
 
 ## ファイル構成
 ```
