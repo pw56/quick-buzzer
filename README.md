@@ -7,7 +7,7 @@
 
 ## ファイル構成
 ```
-quiz-usb-audio/
+quick-buzzer/
 ├── data/
 │   ├── pushed.h      - ボタン押下音のオーディオデータ
 │   ├── correct.h     - 正解音のオーディオデータ
