@@ -1,1 +1,0 @@
-const byte* ANSWER_SOUND PROGMEM = {}
