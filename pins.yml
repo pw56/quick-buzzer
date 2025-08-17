@@ -1,0 +1,16 @@
+button1: A0
+button2: A1
+button3: A2
+button4: A3
+button5: A4
+button6: A5
+lamp1: D0
+lamp2: D1
+lamp3: D2
+lamp4: D3
+lamp5: D4
+lamp6: D5
+correct_button: A6
+incorrect_button: A7
+USB(D-): D6
+USB(D+): D7
