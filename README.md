@@ -28,7 +28,7 @@ quiz-usb-audio/
 - [AudioMass](https://audiomass.co/)
 
 ## 使用するライブラリ
-- V-USB
+- [V-USB](https://github.com/obdev/v-usb)
 
 ## セットアップ
 1. Arduino Web Editorでプロジェクトを開く
