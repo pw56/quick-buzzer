@@ -26,10 +26,14 @@ quick-buzzer
 
 ## 使用するソフト
 - [Arduino Web Editor](https://create.arduino.cc/editor)
-- [AudioMass](https://audiomass.co/)
+- [Wav2C](https://guilhermerodrigues680.github.io/wav2c-online)
 
 ## 使用するライブラリ
 - [V-USB](https://github.com/obdev/v-usb)
+
+## 使用した音源
+- [効果音ラボ](https://soundeffect-lab.info/)
+- [OtoLogic](https://otologic.jp/)
 
 ## 回路
 ![回路図]()
@@ -40,7 +44,7 @@ quick-buzzer
 3. Arduino Nanoに書き込み
 
 ## 使用方法
-1. システムを起動
+1. 本体を起動
 2. ボタンを押して早押し機能を使用
 3. 正解/不正解に応じて音声が再生される
 
