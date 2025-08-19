@@ -12,5 +12,6 @@ lamp5: D4
 lamp6: D5
 correct_button: A6
 incorrect_button: A7
+buzzer: D8
 USB(D-): D6
 USB(D+): D7
