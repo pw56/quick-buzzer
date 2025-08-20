@@ -23,7 +23,7 @@ quick-buzzer
 │   └── audio_player.cpp - オーディオプレイヤー実装
 ├── usbconfig.h          - USBの設定ファイル
 ├── pins.yml             - ピン割り当てのメモ
-├── prompt.txt           - ソースコードのコーディングの会話ページ
+├── prompt.txt           - ソースコードのコーディングのプロンプトの文章
 ├── LICENSE
 └── README.md
 ```
