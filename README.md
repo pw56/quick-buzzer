@@ -9,19 +9,22 @@
 ```
 quick-buzzer
 ├── data
-│   ├── pushed.h       - ボタン押下音のオーディオデータ
-│   ├── correct.h      - 正解音のオーディオデータ
-│   └── incorrect.h    - 不正解音のオーディオデータ
+│   ├── pushed.h         - ボタン押下音のオーディオデータ
+│   ├── correct.h        - 正解音のオーディオデータ
+│   └── incorrect.h      - 不正解音のオーディオデータ
 ├── lib
-│   └── VUSB           - V-USB ライブラリ
+│   └── VUSB             - V-USB ライブラリ
 │       ├── usbconfig.h
 │       ├── usbdrv.h
 │       └── ...
 ├── src
-│   ├── main.ino       - メインプログラム
-│   ├── audio_player.h - オーディオプレイヤーヘッダー
+│   ├── main.ino         - メインプログラム
+│   ├── audio_player.h   - オーディオプレイヤーヘッダー
 │   └── audio_player.cpp - オーディオプレイヤー実装
-├── usbconfig.h        - USBの設定ファイル
+├── usbconfig.h          - USBの設定ファイル
+├── pins.yml             - ピン割り当てのメモ
+├── prompt.txt           - ソースコードのコーディングの会話ページ
+├── LICENSE
 └── README.md
 ```
 
