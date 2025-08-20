@@ -40,7 +40,7 @@ quick-buzzer
 - [OtoLogic](https://otologic.jp/)
 
 ## 回路
-![回路図]()
+![回路図](docs/schematic.png)
 
 ## セットアップ
 1. Arduino Web Editorでプロジェクトを開く
@@ -63,5 +63,5 @@ quick-buzzer
   - incorrect.h: 不正解音
 
 ## 実物写真
-![通常]()
-![点灯]()
+![通常](docs/)
+![点灯](docs/)
