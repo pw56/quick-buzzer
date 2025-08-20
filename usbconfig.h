@@ -5,9 +5,9 @@
 // CPUクロック（kHz単位）。16MHz動作なら 16000
 #define USB_CFG_CLOCK_KHZ      (F_CPU/1000)
 
-// D− を Arduino D6、D＋ を D7 に接続
-#define USB_CFG_DMINUS_BIT     6
-#define USB_CFG_DPLUS_BIT      7
+// D− を Arduino D8、D＋ を D9 に接続
+#define USB_CFG_DMINUS_BIT     8
+#define USB_CFG_DPLUS_BIT      9
 
 // 内部プルアップを使う場合は USB_CFG_PULLUP_INTERNAL を1に
 //#define USB_CFG_PULLUP_INTERNAL 1
