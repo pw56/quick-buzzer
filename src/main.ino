@@ -3,12 +3,17 @@
 #include "usbdrv.h"
 #include "audio_player.h"
 
+// 音声データヘッダファイルをインクルード
+#include "../data/pushed.h"
+#include "../data/correct.h"
+#include "../data/incorrect.h"
+
 // ボタン入力ピン
 const uint8_t btnPins[8] = {A0, A1, A2, A3, A4, A5, A6, A7};
 // ランプ出力ピン
 const uint8_t ledPins[6] = {0, 1, 2, 3, 4, 5};
 
-AudioPlayer player;
+// AudioPlayerはaudio_player.cppでグローバルに定義済み
 volatile bool usbEvent = false;
 
 // USB HID Report: 8bit (キーコードのみ)
@@ -22,7 +27,7 @@ void setup() {
   for (auto p : ledPins) pinMode(p, OUTPUT), digitalWrite(p, LOW);
   for (auto p : btnPins) pinMode(p, INPUT_PULLUP);
 
-  player.begin();
+  audioPlayer.begin();
   usbInit();
   sei();
 }
@@ -37,7 +42,7 @@ void loop() {
       if (digitalRead(btnPins[i]) == LOW) {
         firstPress = i;
         digitalWrite(ledPins[i], HIGH);
-        player.play(pushed_wav, /*長さはヘッダ内定義*/ 0); 
+        audioPlayer.play(pushed_wav, pushed_wav_length); 
         sendKey('K');
         break;
       }
@@ -49,9 +54,9 @@ void loop() {
         // 全LEDリセット
         for (auto p : ledPins) digitalWrite(p, LOW);
         if (i == 6) {
-          player.play(correct_wav, 0);
+          audioPlayer.play(correct_wav, correct_wav_length);
         } else {
-          player.play(incorrect_wav, 0);
+          audioPlayer.play(incorrect_wav, incorrect_wav_length);
         }
         sendKey('0');
         firstPress = -1;
