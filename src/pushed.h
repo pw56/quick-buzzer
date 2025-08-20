@@ -5,9 +5,9 @@
 // Baseado no wav2c em C de Olle Jonsson: https://github.com/olleolleolle/wav2c
 
 // const int sounddata_sampleRate = 32000; 
-const int pushed_wav_length = 30710; 
+const int pushed_length = 30710; 
 
-const unsigned char pushed_wav[] PROGMEM ={ 73,
+const unsigned char pushed[] PROGMEM ={ 73,
  78,  70,  79,  73,  65,  82,  84,   9,   0,   0,   0,  79, 116, 111,  76, 111, 103, 105,  99,   0,
   0,  73,  67,  77,  84,  27,   0,   0,   0, 111, 110, 108, 105, 110, 101,  45,  97, 117, 100, 105,
 111,  45,  99, 111, 110, 118, 101, 114, 116, 101, 114,  46,  99, 111, 109,   0,   0,  73,  78,  65,
