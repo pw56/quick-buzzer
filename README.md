@@ -8,24 +8,20 @@
 ## ファイル構成
 ```
 quick-buzzer
-├── data
-│   ├── pushed.h         - ボタン押下音のオーディオデータ
-│   ├── correct.h        - 正解音のオーディオデータ
-│   └── incorrect.h      - 不正解音のオーディオデータ
-├── lib
-│   └── VUSB             - V-USB ライブラリ
-│       ├── usbconfig.h
-│       ├── usbdrv.h
-│       └── ...
-├── src
-│   ├── main.ino         - メインプログラム
-│   ├── audio_player.h   - オーディオプレイヤーヘッダー
-│   └── audio_player.cpp - オーディオプレイヤー実装
-├── usbconfig.h          - USBの設定ファイル
-├── pins.yml             - ピン割り当てのメモ
-├── prompt.txt           - ソースコードのコーディングのプロンプトの文章
+├── pushed.h         - ボタン押下音のオーディオデータ
+├── correct.h        - 正解音のオーディオデータ
+├── incorrect.h      - 不正解音のオーディオデータ
+├── main.ino         - メインプログラム
+├── audio_player.h   - オーディオプレイヤーヘッダー
+├── audio_player.cpp - オーディオプレイヤー実装
+├── usbconfig.h      - USBの設定ファイル
+├── pins.yml         - ピン割り当てのメモ
+├── prompt.txt       - ソースコードのコーディングのプロンプトの文章
 ├── LICENSE
 └── README.md
+
+libraries
+└── VUSB             - V-USB ライブラリ
 ```
 
 ## 使用するソフト
