@@ -21,7 +21,7 @@ private:
   volatile bool isPlaying;
   
 public:
-  // ブザーピン (D8) を使って PWM で再生
+  // ブザーピン (D10) を使って PWM で再生
   void begin();
   void play(const uint8_t *data, uint16_t length);
   bool isPlayingAudio();

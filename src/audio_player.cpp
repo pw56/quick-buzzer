@@ -2,7 +2,7 @@
 #include <Arduino.h>
 
 // ブザーピン (pins.ymlに基づく)
-#define BUZZER_PIN 8
+#define BUZZER_PIN 10
 
 // サンプリングレート (8kHz)
 #define SAMPLE_RATE 8000
