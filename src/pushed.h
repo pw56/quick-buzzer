@@ -1,15 +1,6 @@
 #ifndef PUSHED_H
 #define PUSHED_H
 
-// Wav2c recriado em Javascript por Guilherme Rodrigues: https://github.com/guilhermerodrigues680/wav2c-online
-// Baseado no wav2c em C de Olle Jonsson: https://github.com/olleolleolle/wav2c
-
-// Wav2c recriado em Javascript por Guilherme Rodrigues: https://github.com/guilhermerodrigues680/wav2c-online
-// Baseado no wav2c em C de Olle Jonsson: https://github.com/olleolleolle/wav2c
-
-// const int pushed_sampleRate = 8000; 
-const int pushed_length = 7644; 
-
 const unsigned char pushed_data[] PROGMEM ={ 45,
   0, 103,   0, 101,   0, 111,   0, 110,   0, 106,   0, 101,   0,  98,   0, 101,   0, 104,   0, 110,
   0, 111,   0, 112,   0, 109,   0, 105,   0, 101,   0, 104,   0,  98,   0,  95,   0,  95,   0,  94,

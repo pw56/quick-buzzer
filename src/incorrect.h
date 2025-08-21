@@ -1,15 +1,6 @@
 #ifndef INCORRECT_H
 #define INCORRECT_H
 
-// Wav2c recriado em Javascript por Guilherme Rodrigues: https://github.com/guilhermerodrigues680/wav2c-online
-// Baseado no wav2c em C de Olle Jonsson: https://github.com/olleolleolle/wav2c
-
-// Wav2c recriado em Javascript por Guilherme Rodrigues: https://github.com/guilhermerodrigues680/wav2c-online
-// Baseado no wav2c em C de Olle Jonsson: https://github.com/olleolleolle/wav2c
-
-// const int incorrect_sampleRate = 8000; 
-const int incorrect_length = 1784; 
-
 const unsigned char incorrect_data[] PROGMEM ={ 73,
  78,  70,  79,  73,  83,  70,  84,  13,   0,   0,   0,  76,  97, 118, 102,  54,  49,  46,  49,  46,
  49,  48,  48,   0,   0, 100,  97, 116,  97, 214,   6,   0,   0,  76,   0, 139,   0, 131,   0,  97,
