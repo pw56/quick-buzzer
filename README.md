@@ -46,3 +46,6 @@ libraries
 ## 実物写真
 ![通常](docs/)
 ![点灯](docs/)
+
+## スケッチ
+[Arduino Web Editor - quick-buzzer](https://app.arduino.cc/sketches/8df1547e-1683-44ad-8725-f67bf0925067?view-mode=preview)
