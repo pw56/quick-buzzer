@@ -3,10 +3,10 @@
 #include "correct.h"
 #include "incorrect.h"
 #include <avr/pgmspace.h>
-#include <VUSB.h>
+#include <Keyboard.h>
 
 // ボタンピン
-const int buttons[] = {A0, A1, A2, A3, A4, A5};
+const int buttons[] = {22, 23, 24, 25, 26, 27};
 const int correctBtn = 8;
 const int incorrectBtn = 9;
 
@@ -29,16 +29,23 @@ void setup() {
   // ブザー出力
   pinMode(BUZZER_PIN, OUTPUT);
 
-  // V-USB 初期化
-  usbInit();
-  usbDeviceDisconnect();
-  delay(250);
-  usbDeviceConnect();
+  // Keyboard 初期化
+  Keyboard.begin();
+  
+  // 起動時LED点滅 (内蔵LED: pin 13)
+  pinMode(LED_BUILTIN, OUTPUT);
+  for (int i = 0; i < 10; i++) {
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(100);
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(100);
+  }
 }
 
 void loop() {
-  usbPoll();
-
+  // キーボード入力チェック
+  sendKeyboardInput();
+  
   // 回答中でないならボタン受付
   if (!answering) {
     for (int i = 0; i < 6; i++) {
@@ -65,35 +72,22 @@ void loop() {
   }
 }
 
-// USB HID 機能: キーボードとして動作
-USB_PUBLIC uchar usbFunctionSetup(uchar data[8]) {
-  usbRequest_t *rq = (usbRequest_t *)data;
-
-  if ((rq->bmRequestType & USBRQ_TYPE_MASK) == USBRQ_TYPE_CLASS &&
-      rq->bRequest == USBRQ_HID_GET_REPORT) {
-    static uchar report[2] = {0, 0};  // 無入力
-
-    // 入力状態を模倣
-    if (!answering) {
-      for (int i = 0; i < 6; i++) {
-        if (digitalRead(buttons[i]) == LOW) {
-          report[0] = 0;         // 修飾キーなし
-          report[1] = 0x0E;      // 'K'キーのスキャンコード
-          break;
-        }
-      }
-    } else {
-      if (digitalRead(correctBtn) == LOW || digitalRead(incorrectBtn) == LOW) {
-        report[0] = 0;
-        report[1] = 0x27; // '0'キーのスキャンコード
+// キーボード入力の送信
+void sendKeyboardInput() {
+  if (!answering) {
+    for (int i = 0; i < 6; i++) {
+      if (digitalRead(buttons[i]) == LOW) {
+        Keyboard.write('k');  // 'K'キーを送信
+        delay(100);  // デバウンス
+        break;
       }
     }
-
-    usbMsgPtr = report;
-    return sizeof(report);
+  } else {
+    if (digitalRead(correctBtn) == LOW || digitalRead(incorrectBtn) == LOW) {
+      Keyboard.write('0');  // '0'キーを送信
+      delay(100);  // デバウンス
+    }
   }
-
-  return 0;
 }
 
 void resetState() {
