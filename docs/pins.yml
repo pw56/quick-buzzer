@@ -10,8 +10,8 @@ lamp3: D4
 lamp4: D5
 lamp5: D6
 lamp6: D7
-correct_button: A6
-incorrect_button: A7
-USB(D-): D8
-USB(D+): D9
+correct_button: D8
+incorrect_button: D9
+USB(D-): D18
+USB(D+): D19
 buzzer: D10

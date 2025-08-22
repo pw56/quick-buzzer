@@ -7,8 +7,8 @@
 
 // ボタンピン
 const int buttons[] = {A0, A1, A2, A3, A4, A5};
-const int correctBtn = A6;
-const int incorrectBtn = A7;
+const int correctBtn = 8;
+const int incorrectBtn = 9;
 
 // ランプピン
 const int lamps[] = {2, 3, 4, 5, 6, 7};
