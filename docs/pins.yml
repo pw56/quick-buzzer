@@ -1,9 +1,9 @@
-button1: A0
-button2: A1
-button3: A2
-button4: A3
-button5: A4
-button6: A5
+button1: D22
+button2: D23
+button3: D24
+button4: D25
+button5: D26
+button6: D27
 lamp1: D2
 lamp2: D3
 lamp3: D4
@@ -12,6 +12,4 @@ lamp5: D6
 lamp6: D7
 correct_button: D8
 incorrect_button: D9
-USB(D-): D18
-USB(D+): D19
 buzzer: D10
